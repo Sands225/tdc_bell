@@ -1,0 +1,22 @@
+/* body {
+	background-color: black;
+	color: white;
+} */
+
+.user-info {
+	padding: 20px;
+	text-align: center;
+}
+
+.button {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	height: 50vh;
+	width: 70vw;
+	position: relative;
+}

@@ -1,0 +1,21 @@
+/* body {
+	background-color: black;
+	color: white;
+} */
+
+.user-info {
+	padding: 20px;
+	text-align: center;
+}
+
+.login-form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	display: flex;
+	margin: 0 auto;
+}
