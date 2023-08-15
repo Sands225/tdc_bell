@@ -6,22 +6,40 @@
 .user-info {
 	padding: 20px;
 	text-align: center;
+	line-height: 5px;
 }
 
 .action-button {
 	display: flex;
 	justify-content: center;
+	margin-top: 30px;
 }
-
 .action-button > div {
 	margin: 0 5px;
 }
-
-table {
-	text-align: center;
-	margin: 0 auto;
+button {
+	padding: 5px 10px;
+	color: white;
+	background-color: #1e1e1e;
+	border-radius: 25px;
+	cursor: pointer;
 }
-tr > td,
-th {
+
+hr {
+	width: 80%;
+}
+table {
+	width: 80%;
+	text-align: center;
+	margin: 20px auto;
+}
+
+.tabel-urutan {
 	padding: 5px;
+	width: 5%;
+}
+.tabel-nama,
+.tabel-waktu {
+	padding: 5px;
+	width: 40%;
 }

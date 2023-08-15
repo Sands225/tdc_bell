@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Agu 2023 pada 03.39
+-- Waktu pembuatan: 15 Agu 2023 pada 06.44
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -42,8 +42,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nama`, `email`, `sebagai`, `password`) VALUES
 (1, 'I Made Sandika Wijaya', 'sandikakadek2018@gmail.com', 'juri', '123'),
 (3, 'Sandika Wijaya', 'sanditurty2018@gmail.com', 'peserta', '123'),
-(6, 'Zamzam', 'zam@gmail.com', 'peserta', '123'),
-(7, 'Cok Esa', 'cokesa@gmail.com', 'peserta', '123');
+(9, 'Eri Widura', 'eri@gmail.com', 'peserta', '123');
 
 -- --------------------------------------------------------
 
@@ -76,7 +75,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

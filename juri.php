@@ -55,6 +55,7 @@ if (isset($_POST['reset'])) {
 			</div> -->
 		</div>
 		<br />
+		<hr>
 		<div id="user-data_waktu">
 			<!-- <table border="1">
 				<thead>
@@ -94,15 +95,15 @@ if (isset($_POST['reset'])) {
 						let respon = JSON.parse( res );
                         console.log(respon);
 
-                        var data_waktu ='<table border="1"><thead><tr><th>Urutan</th><th>Nama</th><th>Waktu</th></tr></thead><tbody>';
+                        var data_waktu ='<table border="1"><thead><tr><th class="tabel-urutan">Urutan</th><th class="tabel-nama">Nama</th><th class="tabel-waktu">Waktu</th></tr></thead><tbody>';
 
                         for (let i = 0, j = 1; i < respon['data'].length; i++, j++) {
-								console.log("hi");
-								data_waktu += '<tr> <td>' 
+								// console.log("hi");
+								data_waktu += '<tr> <td class="tabel-urutan">' 
 										+j+  
-									'</td> <td>'
+									'</td> <td class="tabel-nama">'
 										+respon['data'][i].nama+
-									'</td> <td>'
+									'</td> <td class="tabel-waktu">'
 										+getTime(respon['data'][i].timestamp)+
 									'</td> </tr> ';
                         }
@@ -132,6 +133,12 @@ if (isset($_POST['reset'])) {
 				console.log(time);
 				return time;
 			}
+			// function getMilisecond(timeStamp) {
+			// 	timeStamp = Number(timeStamp);
+			// 	const miliseconds = Math.floor((timeStamp % 1000) / 100);
+			// 	console.log(miliseconds);
+			// 	return miliseconds;
+			// }
 		</script>
 	</body>
 </html>

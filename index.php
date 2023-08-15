@@ -7,13 +7,13 @@ if (!isset($_COOKIE['id'])) {
 
 require 'functions/user-data.php';
 
-if (isset($_POST['press'])) {
-    $timestamp = time();
-    $query_sendto_waktu = "INSERT INTO waktu VALUES 
-						('$id', '$nama', '$email', '$timestamp')
-						";
-	mysqli_query($conn, $query_sendto_waktu);
-} 
+// if (isset($_POST['press'])) {
+//     $timestamp = time();
+//     $query_sendto_waktu = "INSERT INTO waktu VALUES 
+// 						('$id', '$nama', '$email', '$timestamp')
+// 						";
+// 	mysqli_query($conn, $query_sendto_waktu);
+// } 
 
 ?>
 
@@ -26,6 +26,12 @@ if (isset($_POST['press'])) {
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
+
+		<audio class="bell-sound">
+			<source src="src/bell_sound_pressed.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+
 		<!-- USER INFO -->
 		<div class="user-info">
 			<h2>
@@ -34,18 +40,30 @@ if (isset($_POST['press'])) {
 			<p><?php echo "sebagai ", $sebagai, " ", $id ?></p>
 		</div>
 		<div class="button">
-			<form action="" method="post">
-				<button 
-                    type="submit"
-                    name="press"
-                    id="press">
-                    Press
-                </button>
-			</form>
+			<button 
+				name="press"
+				id="press"
+				onclick="sendTime()">
+					<h3>PRESS</h3>
+            </button>
 		</div>
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            
+            function sendTime() {
+
+				var bell_audio = document.getElementsByClassName("bell-sound")[0];
+				bell_audio.play();
+
+                $.ajax({
+                    method: "POST",
+                    url: "functions/send_user-data_waktu.php",
+                    }).done(function( res ) {
+						let respon = res;
+                        console.log(res);
+                });
+            }
+
+			// sendTime();
         </script>
 	</body>
 </html>
