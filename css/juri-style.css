@@ -43,3 +43,8 @@ table {
 	padding: 5px;
 	width: 40%;
 }
+.winner {
+	font-weight: bold;
+	font-size: 25px;
+	padding: 15px 0;
+}

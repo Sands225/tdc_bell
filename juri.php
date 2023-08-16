@@ -99,13 +99,24 @@ if (isset($_POST['reset'])) {
 
                         for (let i = 0, j = 1; i < respon['data'].length; i++, j++) {
 								// console.log("hi");
-								data_waktu += '<tr> <td class="tabel-urutan">' 
+								if ( i == 0) {
+									data_waktu += '<tr> <td class="tabel-urutan winner">' 
 										+j+  
-									'</td> <td class="tabel-nama">'
+									'</td> <td class="tabel-nama winner">'
 										+respon['data'][i].nama+
-									'</td> <td class="tabel-waktu">'
+									'</td> <td class="tabel-waktu winner">'
 										+getTime(respon['data'][i].timestamp)+
 									'</td> </tr> ';
+								}
+								else {
+									data_waktu += '<tr> <td class="tabel-urutan">' 
+											+j+  
+										'</td> <td class="tabel-nama">'
+											+respon['data'][i].nama+
+										'</td> <td class="tabel-waktu">'
+											+getTime(respon['data'][i].timestamp)+
+										'</td> </tr> ';
+								}
                         }
 
 						data_waktu += '</tbody></table><br>';
@@ -117,7 +128,7 @@ if (isset($_POST['reset'])) {
 			newData();
 
 			// Refresh the function newData() every 0.5 seconds (500 milliseconds)
-			setInterval(newData, 500);
+			// setInterval(newData, 500);
 
 			// $(document).ready(function() {
 			// 		$(document).on('click', '.refresh', function(event) {
@@ -130,8 +141,13 @@ if (isset($_POST['reset'])) {
 				timeStamp = Number(timeStamp);
 				const date = new Date(timeStamp * 1000);
 				const time = date.toLocaleTimeString();
-				console.log(time);
-				return time;
+				const milisecond = (Math.round(timeStamp * 10000)) % 10000;
+				// console.log(milisecond);
+				// console.log(time);
+
+				const userTime = time + '.' + milisecond;
+				console.log(userTime);
+				return userTime;
 			}
 			// function getMilisecond(timeStamp) {
 			// 	timeStamp = Number(timeStamp);
