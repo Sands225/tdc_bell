@@ -3,6 +3,14 @@
 	color: white;
 } */
 
+body {
+	/* height: 90vh; */
+	color: white;
+	background: linear-gradient(to bottom, #ff2c2c, white);
+	object-fit: cover;
+	background-repeat: no-repeat;
+}
+
 .user-info {
 	padding: 20px;
 	text-align: center;
@@ -17,12 +25,27 @@
 }
 
 button {
-	max-height: 70vh;
-	min-height: 60vh;
+	height: 70vw;
 	width: 70vw;
+	border-radius: 100%;
+	border-style: solid;
+	border-color: rgb(220, 220, 220);
+	border-width: 5px;
+	background-color: white;
 	margin-top: 30px;
 	position: relative;
+	opacity: 0.9;
 }
-button > h3 {
+/* button > div {
+	background: url("../src/tdc_logo-fixed.png");
+	background-attachment: fixed;
+	background-size: contain;
+	background-position: center;
+	background-clip: padding-box;
+} */
+button:hover {
+	opacity: 0.8;
+}
+button > div > h3 {
 	opacity: 0.4;
 }

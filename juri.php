@@ -7,6 +7,10 @@ if (!isset($_COOKIE['id'])) {
 
 require 'functions/user-data.php';
 
+if ($sebagai == "peserta") {
+	header("Location: index.php");
+}
+
 if (isset($_POST['reset'])) {
 	echo '<script> 
 		var confirmDelete = confirm("Anda yakin menghapus waktu peserta saat ini?");
@@ -30,6 +34,7 @@ if (isset($_POST['reset'])) {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>TDC XII - MathLog Bell</title>
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 		<link rel="stylesheet" href="css/juri-style.css" />
 	</head>
 	<body>
@@ -84,6 +89,11 @@ if (isset($_POST['reset'])) {
 				</tbody>
 			</table> -->
 		</div>
+		<div class="light-dark-mode">
+			<!-- <img src="src/mode.svg" alt="" class="">
+			<img src="src/dark-mode.png" alt="" class=""> -->
+		</div>
+
 		<script src="js/jquery.js"></script>
 		<script>
 			function newData() {
@@ -128,7 +138,7 @@ if (isset($_POST['reset'])) {
 			newData();
 
 			// Refresh the function newData() every 0.5 seconds (500 milliseconds)
-			// setInterval(newData, 500);
+			setInterval(newData, 500);
 
 			// $(document).ready(function() {
 			// 		$(document).on('click', '.refresh', function(event) {

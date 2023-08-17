@@ -1,8 +1,12 @@
-/* body {
-	background-color: black;
+body {
 	color: white;
-} */
-
+	height: 100vh;
+	background: linear-gradient(to bottom, #ff2c2c, white);
+	object-fit: cover;
+	font-family: "poppins";
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
 .user-info {
 	padding: 20px;
 	text-align: center;

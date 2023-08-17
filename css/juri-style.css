@@ -1,7 +1,17 @@
 /* body {
-	background-color: black;
+	background-color: #1e1e1e;
 	color: white;
 } */
+
+body {
+	color: white;
+	height: 100vh;
+	background: linear-gradient(to bottom, #ff2c2c, white);
+	object-fit: cover;
+	font-family: "poppins";
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
 
 .user-info {
 	padding: 20px;
@@ -20,7 +30,11 @@
 button {
 	padding: 5px 10px;
 	color: white;
-	background-color: #1e1e1e;
+	border-color: white;
+	background-color: transparent;
+	letter-spacing: 2px;
+	font-size: 15px;
+	border-width: 3px;
 	border-radius: 25px;
 	cursor: pointer;
 }
@@ -30,6 +44,7 @@ hr {
 }
 table {
 	width: 80%;
+	border-color: white;
 	text-align: center;
 	margin: 20px auto;
 }
@@ -40,11 +55,77 @@ table {
 }
 .tabel-nama,
 .tabel-waktu {
+	font-size: 16px;
 	padding: 5px;
 	width: 40%;
 }
 .winner {
+	/* -webkit-text-stroke: black 0.2px; */
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 30px;
 	padding: 15px 0;
 }
+
+/* .light-dark-mode {
+	right: 20px;
+	bottom: 20px;
+	position: fixed;
+}
+
+.toggle {
+	--size: 2rem;
+
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+
+	width: var(--size);
+	height: var(--size);
+	box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+	border-radius: 999px;
+	color: hsl(240, 100%, 95%);
+
+	transition: all 500ms;
+
+	&:checked {
+		--ray-size: calc(var(--size) * -0.4);
+		--offset-orthogonal: calc(var(--size) * 0.65);
+		--offset-diagonal: calc(var(--size) * 0.45);
+
+		transform: scale(0.75);
+		color: hsl(40, 100%, 50%);
+		box-shadow: inset 0 0 0 var(--size),
+			calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+			var(--offset-orthogonal) 0 0 var(--ray-size),
+			0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+			0 var(--offset-orthogonal) 0 var(--ray-size),
+			calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1)
+				0 var(--ray-size),
+			var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+			calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0
+				var(--ray-size),
+			var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0
+				var(--ray-size);
+	}
+}
+
+.background {
+	--bg: hsl(240, 100%, 10%);
+	background: var(--bg);
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	transition: background 500ms;
+}
+
+.toggle {
+	z-index: 1;
+	&:checked {
+		& ~ .background {
+			--bg: white;
+		}
+		& ~ .title {
+			--color: hsl(40, 100%, 50%);
+		}
+	}
+} */

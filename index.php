@@ -1,12 +1,15 @@
 <?php
 
 if (!isset($_COOKIE['id'])) {
-    header("Location: login.php");
+	header("Location: login.php");
     exit;
 }
 
 require 'functions/user-data.php';
 
+if ($sebagai == "juri") {
+	header("Location: juri.php");
+}
 // if (isset($_POST['press'])) {
 //     $timestamp = time();
 //     $query_sendto_waktu = "INSERT INTO waktu VALUES 
@@ -23,6 +26,7 @@ require 'functions/user-data.php';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>TDC XII - MathLog Bell</title>
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
@@ -37,16 +41,19 @@ require 'functions/user-data.php';
 			<h2>
                 <?php echo $nama ?>
             </h2>
-			<p><?php echo "sebagai ", $sebagai, " ", $id ?></p>
+			<p><?php echo "sebagai ", $sebagai?></p>
 		</div>
 		<div class="button">
 			<button 
 				name="press"
 				id="press"
 				onclick="sendTime()">
-					<h3>PRESS</h3>
+					<div>
+						<h3>PRESS</h3>
+					</div>
             </button>
 		</div>
+		<div class="toggle"></div>
        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             function sendTime() {

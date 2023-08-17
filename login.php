@@ -40,12 +40,13 @@ if (isset($_COOKIE['id'])) {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>TDC XII - MathLog Bell</title>
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 		<link rel="stylesheet" href="css/login-style.css" />
 	</head>
 	<body>
 		<!-- USER INFO -->
 		<div class="user-info">
-			<h2>User Login</h2>
+			<h2>USER LOGIN</h2>
 		</div>
 		<div class="login-form">
 			<form action="" method="post">
@@ -60,14 +61,14 @@ if (isset($_COOKIE['id'])) {
                     id="check-user" />
 				<br />
 				<br />
-				<label for="">Password</label>
+				<!-- <label for="">Password</label>
 				<br />
 				<input 
                     type="password" 
                     name="check-pass" 
                     id="check-pass" />
 				<br />
-				<br />
+				<br /> -->
 				<button 
                     type="submit"
                     name="login"
