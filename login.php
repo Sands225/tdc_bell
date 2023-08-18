@@ -4,9 +4,9 @@ require 'functions/connect.php';
 if ( isset ($_POST["login"])) {
     
     $check_user = $_POST["check-user"];
-    $check_pass = $_POST["check-pass"];
+    // $check_pass = $_POST["check-pass"];
 
-    $query = mysqli_query($conn, "SELECT * FROM user WHERE email = '$check_user' OR nama = '$check_user'");
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE nama = '$check_user'");
     
     // var_dump($query);
     
@@ -24,6 +24,20 @@ if ( isset ($_POST["login"])) {
             header("Location: juri.php");
         }
         exit;
+    }
+    else {
+        //  create
+        $create_new_user = "INSERT INTO user VALUES ('', '$check_user', '', 'peserta', '')";
+        mysqli_query($conn, $create_new_user);
+
+        $query_new_user = mysqli_query($conn, "SELECT * FROM user WHERE nama = '$check_user'");
+
+        $user_data = mysqli_fetch_assoc($query_new_user);
+        $user_id = $user_data['id'];
+        $sebagai = $user_data['sebagai'];
+
+        setcookie('id', $user_id, time() + 3600);
+        header("Location: index.php");
     }
 }
 
